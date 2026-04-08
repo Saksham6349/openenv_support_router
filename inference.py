@@ -5,17 +5,13 @@ import time
 from openai import OpenAI
 
 # API Configuration from Environment
-api_base_url = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
-model_name = os.getenv("MODEL_NAME", "gpt-3.5-turbo")
-api_key = os.getenv("HF_TOKEN", os.getenv("OPENAI_API_KEY", ""))
-
-if not api_key:
-    # Quick fallback for local testing if needed
-    api_key = "dummy-key-if-not-set"
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
+MODEL_NAME = os.getenv("MODEL_NAME", "gpt-3.5-turbo")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 client = OpenAI(
-    api_key=api_key,
-    base_url=api_base_url,
+    api_key=HF_TOKEN,
+    base_url=API_BASE_URL,
 )
 
 tasks = ["easy", "medium", "hard"]
@@ -71,7 +67,7 @@ Format: {{"department": "sales", "urgency": "medium"}}
 """
             try:
                 completion = client.chat.completions.create(
-                    model=model_name,
+                    model=MODEL_NAME,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.0
                 )

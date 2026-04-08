@@ -1,3 +1,14 @@
+---
+title: Support Router OpenEnv
+emoji: 🏢
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+tags:
+  - openenv
+---
+
 # OpenEnv: Customer Support Router
 
 ## Project Motivation

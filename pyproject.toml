@@ -1,0 +1,17 @@
+[project]
+name = "openenv-support-router"
+version = "1.0.0"
+description = "A Meta Hackathon OpenEnv submission simulating customer support email triage."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "openai",
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

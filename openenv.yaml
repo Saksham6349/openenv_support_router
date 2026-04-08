@@ -1,0 +1,19 @@
+name: "support_router"
+version: "1.0.0"
+description: "A real-world environment simulating a customer support email routing task. Agents must categorize incoming tickets into the correct department and assign the correct urgency."
+api:
+  baseUrl: "/"
+endpoints:
+  reset: /reset
+  step: /step
+  state: /state
+tasks:
+  - name: "easy"
+    description: "Route a single simple tech support ticket."
+  - name: "medium"
+    description: "Route three distinct tickets across different departments."
+  - name: "hard"
+    description: "Route five tickets including ambiguous edge cases like spam and job applications."
+environment:
+  type: "http"
+  port: 7860
